@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node -e \"const en=require\\('./locales/en.json'\\); console.log\\('common.edit:', en.common&&en.common.edit\\); console.log\\('store.saved:', en.store&&en.store.saved\\); console.log\\('common.success:', en.common&&en.common.success\\)\")"
+    ]
+  }
+}

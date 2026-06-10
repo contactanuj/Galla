@@ -1,0 +1,38 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(cd \"c:\\\\Users\\\\EasyGov\\\\Downloads\\\\project-bolt-sb1-sycp6rny\\\\project\"; Get-ChildItem -Recurse -Force | Select-Object @{Name='Path'; Expression={$_.FullName -replace [regex]::Escape\\(\\(Get-Location\\).Path\\), \".\" }} | Sort-Object Path)",
+      "Bash(npm install *)",
+      "Bash(node -e \"const p=require\\('./package.json'\\); console.log\\('@supabase/supabase-js:', p.dependencies['@supabase/supabase-js']\\); console.log\\('react-native-url-polyfill:', p.dependencies['react-native-url-polyfill']\\);\")",
+      "Bash(node -e ' *)",
+      "Bash(npx tsc *)",
+      "Bash(npx expo *)",
+      "Bash(node -e \"console.log\\('arch:', process.arch, '| platform:', process.platform, '| node:', process.version\\)\")",
+      "PowerShell(Write-Output \"OS arch: $env:PROCESSOR_ARCHITECTURE\"; Write-Output \"--- node on PATH ---\"; \\(Get-Command node\\).Source; node -p \"process.arch\"; Write-Output \"--- candidate 64-bit node installs ---\"; @\\(\"C:\\\\Program Files\\\\nodejs\\\\node.exe\",\"C:\\\\Program Files\\\\nodejs\\\\node.exe\"\\) | ForEach-Object { if \\(Test-Path $_\\) { \"$_ -> \" + \\(& $_ -p \"process.arch\"\\) } }; Get-ChildItem \"C:\\\\Program Files\\\\nodejs\\\\node.exe\" -ErrorAction SilentlyContinue | ForEach-Object { \"Found: \" + $_.FullName })",
+      "PowerShell($nvm = Get-Command nvm -ErrorAction SilentlyContinue; if \\($nvm\\) { Write-Output \"nvm found: $\\($nvm.Source\\)\"; nvm list } else { Write-Output \"nvm: not installed\" })",
+      "PowerShell(Write-Output \"PATH node: $\\(\\(Get-Command node\\).Source\\)\"; node -p \"process.arch + ' | ' + process.version\")",
+      "PowerShell(try { $r = Invoke-WebRequest -Uri \"http://localhost:8081\" -UseBasicParsing -TimeoutSec 120; Write-Output \\(\"HTTP \" + $r.StatusCode + \" | bytes: \" + $r.Content.Length\\) } catch { Write-Output \\(\"REQUEST ERROR: \" + $_.Exception.Message\\) })",
+      "PowerShell(try { $r = Invoke-WebRequest -Uri \"http://localhost:8081/index.bundle?platform=web&dev=true\" -UseBasicParsing -TimeoutSec 240; Write-Output \\(\"BUNDLE HTTP \" + $r.StatusCode + \" | bytes: \" + $r.Content.Length\\) } catch { Write-Output \\(\"BUNDLE ERROR: \" + $_.Exception.Message\\) })",
+      "Bash(node -e \"const p=require\\('./package.json'\\);['react-native-thermal-receipt-printer','@react-native-voice/voice','expo-camera','expo-haptics'].forEach\\(k=>console.log\\(k+':', \\(p.dependencies||{}\\)[k]||'NOT INSTALLED'\\)\\)\")",
+      "Bash(ls -la .npmrc)",
+      "Bash(cat .npmrc)",
+      "Bash(npx eas-cli *)",
+      "Bash(ls -la assets)",
+      "Bash(grep -niE \"icon|splash|adaptive\" app.config.js)",
+      "Bash(ls -la .env*)",
+      "Bash(grep -n \"env\" .gitignore)",
+      "Bash(node -e \"const en=require\\('./locales/en.json'\\); console.log\\('POS keys:', JSON.stringify\\(en.pos,null,1\\)\\); console.log\\('common.error:', en.common && en.common.error\\);\")",
+      "Bash(node -e \"const hi=require\\('./locales/hi.json'\\); console.log\\(JSON.stringify\\(hi.pos,null,1\\)\\);\")",
+      "Bash(grep -rn \"syncService\" --include=*.ts --include=*.tsx app components db hooks lib services store)",
+      "Bash(grep -rn \"decrementStock\\\\|decrementVariantStock\" --include=*.ts --include=*.tsx app components db)",
+      "Bash(grep -rnE \"\\(id|Id\\) *[:=] *\\\\`[a-z]+-\\\\\\\\\\\\$\\\\{Date\\\\.now\\\\\\(\\\\\\)\\\\}\\\\`\" --include=*.ts --include=*.tsx app db)",
+      "Bash(grep -rnE \"\\\\`[a-z]+-\\\\\\\\\\\\$\\\\{Date\\\\.now\\\\\\(\\\\\\)\\\\}\" --include=*.ts --include=*.tsx app db services store lib)",
+      "Bash(echo \"=== exit: $? ===\")",
+      "Bash(npx --no-install eas-cli whoami)",
+      "Bash(git add *)",
+      "Bash(git reset *)",
+      "Bash(node -e \"console.log\\('safe-area-context', require\\('react-native-safe-area-context/package.json'\\).version\\)\")",
+      "Bash(node -e \"const en=require\\('./locales/en.json'\\); console.log\\('units.addUnit:', en.units && en.units.addUnit\\); console.log\\('common.add:', en.common && en.common.add\\); console.log\\('units keys:', en.units && Object.keys\\(en.units\\).join\\(','\\)\\)\")"
+    ]
+  }
+}
