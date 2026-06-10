@@ -1,0 +1,50 @@
+name: Bug report
+description: Report something that isn't working
+labels: ["bug"]
+body:
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: A clear description of the bug, including what you expected.
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Go to …
+        2. Tap …
+        3. See error
+    validations:
+      required: true
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Platform
+      options:
+        - Android (APK / EAS build)
+        - Android (Expo Go / dev)
+        - iOS
+        - Web
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: App version / build
+      description: Settings → version, or the EAS build number.
+  - type: dropdown
+    id: mode
+    attributes:
+      label: Connectivity
+      options:
+        - Online (Supabase configured)
+        - Offline / local-only
+        - Not sure
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs / screenshots
+      description: Paste any error text or attach screenshots.
