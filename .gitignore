@@ -1,0 +1,28 @@
+# dependencies
+node_modules/
+
+# Expo / Metro
+.expo/
+dist/
+web-build/
+*.tsbuildinfo
+expo-env.d.ts
+
+# native build output
+android/
+ios/
+.gradle/
+
+# env — values are supplied to EAS via eas.json "env"
+.env
+.env.local
+
+# logs / OS
+*.log
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+.DS_Store
+
+# local SQLite snapshots
+*.db
